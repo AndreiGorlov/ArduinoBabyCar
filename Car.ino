@@ -62,14 +62,14 @@ PS3BT PS3(&Btd); // This will just create the instance
 // шаг увеличения скорости
 #define SPEEDUPSTEP 8
 // шаг уменьшения скорости
-#define BREAKSTEP 16
+#define BREAKSTEP 32
 
 // текущая скорость. положительные значения - движение вперед, отрицательные - назад
 float CurrentSpeed = 0;
 // текущая передача
 int8_t CurrentGear = 1;
 // лимиты скорости для передач
-uint8_t SpeedLimits[] = {64, 128, 192, 255};
+uint8_t SpeedLimits[] = {96, 128, 192, 255};
 // максимальная скорость
 uint8_t MaxSpeed = 255;
 // разрешено ли ручное управление
@@ -455,7 +455,7 @@ void loop()
         Serial.print(F("\r\nStart"));
       }
     }
-    DisplayTelemetry();
+    //DisplayTelemetry();
   } // if (PS3.PS3Connected)
   else
   {
